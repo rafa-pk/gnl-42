@@ -26,3 +26,9 @@ Static variables are initialized at 0 by default, even if not done explicitly. T
 - Initializes only once
 - Stored in the data segment
 
+# Get next line?
+
+## What is it?
+It is a function which takes a fd and returns a char* . It is meant to return the line that was jus read from said fd. 
+
+## How does it work?
