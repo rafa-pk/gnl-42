@@ -6,7 +6,7 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:11:54 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/02/07 15:00:07 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/02/09 21:06:44 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,6 @@ char	*get_next_line(int fd)
 {
 	char	*str;
 	static char	buf;
+
+	return (str);
 }
