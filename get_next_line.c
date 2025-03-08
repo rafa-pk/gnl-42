@@ -6,7 +6,7 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:11:54 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/08 14:57:21 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/08 15:03:40 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	str = NULL;
-	while (read(fd, buff, BUFFER_SIZE) > 0 || buff[0] != '\0')
+	while (read(fd, buff, BUFFER_SIZE) || buff[0] != '\0')
 	{
 		str = ft_strjoin(str, buff);
 		if (!str)
