@@ -6,39 +6,39 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:36:42 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/08 11:57:57 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/08 13:32:14 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *str, char *buff)
 {
 	size_t		i;
 	size_t		j;
-	size_t		buff_size;
 	char		*merge;
 
-	if (!s1 || !s2)
+	if (!str || !buff)
 		return (NULL);
 	i = 0;
 	j = 0;
-	buff_size = ft_strlen(s1) + ft_strlen(s2);
-	merge = (char *)malloc(sizeof(char) * (buff_size + 1));
+	merge = malloc(sizeof(char) * (ft_strlen(str) + ft_strlen(buff) + 1));
 	if (!merge)
-		return (NULL);
-	while (s1[i] != '\0')
+		return (free(merge), NULL);
+	while (str && str[i] != '\0')
 	{
-		merge[i] = s1[i];
+		merge[i] = str[i];
 		i++;
 	}
-	while (s2[j] != '\0')
+	while (buff[j] && buff[j] != '\n')
 	{
-		merge[i + j] = s2[j];
+		merge[i + j] = buff[j];
 		j++;
 	}
+	if (buff[j] == '\n')
+		merge[i + j++] = '\n';
 	merge[i + j] = '\0';
-	return (merge);
+	return (free(str), merge);
 }
 
 size_t	ft_strlen(char *str)

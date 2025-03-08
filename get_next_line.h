@@ -6,7 +6,7 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:12:49 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/08 12:06:43 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/08 12:35:07 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <fcntl.h>
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(char *str);
 void	*ft_memset(void *b, int c, size_t len);
 #endif
