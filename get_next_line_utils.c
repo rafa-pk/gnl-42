@@ -6,7 +6,7 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:36:42 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/08 13:32:14 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/08 14:50:48 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strjoin(char *str, char *buff)
 	size_t		j;
 	char		*merge;
 
-	if (!str || !buff)
-		return (NULL);
 	i = 0;
 	j = 0;
 	merge = malloc(sizeof(char) * (ft_strlen(str) + ft_strlen(buff) + 1));
