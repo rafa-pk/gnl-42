@@ -1,50 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/06 09:11:54 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/09 16:41:01 by raica-ba         ###   ########.fr       */
+/*   Created: 2025/03/09 15:33:10 by raica-ba          #+#    #+#             */
+/*   Updated: 2025/03/09 16:57:10 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-char	*get_next_line(int fd)
+char	*get_next_line_bonus(int fd)
 {
 	char		*str;
-	static char	buff [BUFFER_SIZE + 1];
+	static char	buff [FOPEN_MAX][BUFFER_SIZE + 1];
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
 		return (NULL);
 	str = NULL;
-	while (buff[0] != '\0' || read(fd, buff, BUFFER_SIZE) > 0)
+	while (buff[fd][0] != '\0' || read(fd, buff[fd], BUFFER_SIZE) > 0)
 	{
-		str = ft_strjoin(str, buff);
+		str = ft_strjoin(str, buff[fd]);
 		if (!str)
 			return (NULL);
-		buff_cleaner(buff);
+		buff_cleaner(buff[fd]);
 		if (str[ft_strlen(str) - 1] == '\n')
 			return (str);
 	}
 	return (str);
 }
-/*
+
 int	main(void)
 {
 	int	fd;
+	int	fd2;
+	int	fd3;
 	int	i;
 
-	fd = open("test.txt", O_RDONLY);
+	fd = open("bonus1.txt", O_RDONLY);
+	fd2 = open("bonus2.txt", O_RDONLY);
+	fd3 = open("bonus3.txt", O_RDONLY);
 	i = 0;
-	if (fd == -1)
-		printf("fd error\n");
-	while (i < 139)
+	while (i < 3)
 	{
-		printf("%s", get_next_line(fd));
+		printf("%s", get_next_line_bonus(fd));
+		printf("%s", get_next_line_bonus(fd2));
+		printf("%s\n", get_next_line_bonus(fd3));
 		i++;
 	}
 	return (0);
-}*/
+}
