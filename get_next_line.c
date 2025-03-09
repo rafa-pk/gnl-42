@@ -6,7 +6,7 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:11:54 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/09 13:36:51 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/09 13:45:38 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_next_line(int fd)
 	}
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	int	fd;
@@ -47,4 +47,4 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}
+}*/
