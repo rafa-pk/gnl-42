@@ -6,7 +6,7 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:11:54 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/08 15:03:40 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/09 13:29:04 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	str = NULL;
-	while (read(fd, buff, BUFFER_SIZE) || buff[0] != '\0')
+	while (buff[0] != '\0' || read(fd, buff, BUFFER_SIZE) > 0)
 	{
 		str = ft_strjoin(str, buff);
 		if (!str)
 			return (NULL);
-		ft_memset(buff, 0, BUFFER_SIZE + 1);
+		buff_cleaner(buff);
 		if (str[ft_strlen(str) - 1] == '\n')
 			return (str);
 	}
@@ -35,11 +35,16 @@ char	*get_next_line(int fd)
 int	main(void)
 {
 	int	fd;
+	int	i;
 
 	fd = open("test.txt", O_RDONLY);
+	i = 0;
 	if (fd == -1)
 		printf("fd error\n");
-	while (get_next_line(fd) != NULL)
-		printf("%s\n", get_next_line(fd));
+	while (i <= 2)
+	{
+		printf("%s", get_next_line(fd));
+		i++;
+	}
 	return (0);
 }

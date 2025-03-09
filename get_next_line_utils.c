@@ -6,7 +6,7 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:36:42 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/08 14:50:48 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/09 13:27:09 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,25 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*buff_cleaner(char *buff)
 {
-	size_t			i;
-	unsigned char	byte_value;
-	unsigned char	*string;
+	int	i;
+	int	j;
 
 	i = 0;
-	byte_value = (unsigned char) c;
-	string = (unsigned char *) b;
-	while (i < len)
-	{
-		string[i] = byte_value;
+	j = 0;
+	while (buff[i] != '\n' && buff[i] != '\0')
 		i++;
+	if (buff[i] == '\n')
+		i++;
+	while (buff[i] != '\0')
+	{
+		buff[j] = buff[i];
+		i++;
+		j++;
 	}
-	return (b);
+	while (j < BUFFER_SIZE)
+		buff[j++] = '\0';
+	return (buff);
 }
+

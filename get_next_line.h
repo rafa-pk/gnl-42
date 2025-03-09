@@ -6,7 +6,7 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:12:49 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/08 12:35:07 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/09 12:43:07 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@
 char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(char *str);
-void	*ft_memset(void *b, int c, size_t len);
+char	*buff_cleaner(char *str);
 #endif
