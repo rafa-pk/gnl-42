@@ -6,13 +6,13 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 15:33:10 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/09 16:57:10 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/10 14:32:50 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char	*get_next_line_bonus(int fd)
+char	*get_next_line(int fd)
 {
 	char		*str;
 	static char	buff [FOPEN_MAX][BUFFER_SIZE + 1];
@@ -45,9 +45,9 @@ int	main(void)
 	i = 0;
 	while (i < 3)
 	{
-		printf("%s", get_next_line_bonus(fd));
-		printf("%s", get_next_line_bonus(fd2));
-		printf("%s\n", get_next_line_bonus(fd3));
+		printf("%s\n", get_next_line(fd));
+		printf("%s\n", get_next_line(fd2));
+		printf("%s\n", get_next_line(fd3));
 		i++;
 	}
 	return (0);
