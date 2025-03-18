@@ -6,7 +6,7 @@
 /*   By: raica-ba <raica-ba@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 15:33:10 by raica-ba          #+#    #+#             */
-/*   Updated: 2025/03/10 14:32:50 by raica-ba         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:36:47 by raica-ba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_next_line(int fd)
 	}
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	int	fd;
@@ -43,12 +43,12 @@ int	main(void)
 	fd2 = open("bonus2.txt", O_RDONLY);
 	fd3 = open("bonus3.txt", O_RDONLY);
 	i = 0;
-	while (i < 3)
+	while (i < 7)
 	{
-		printf("%s\n", get_next_line(fd));
-		printf("%s\n", get_next_line(fd2));
-		printf("%s\n", get_next_line(fd3));
+		printf("%s", get_next_line(fd));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd3));
 		i++;
 	}
 	return (0);
-}
+}*/
